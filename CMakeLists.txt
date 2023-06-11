@@ -8,4 +8,4 @@ set(SOURCE_FILES
         src/planche.cpp
         )
 
-include(../SetCommonConfig.cmake)
+include(config/SetCommonConfig.cmake)

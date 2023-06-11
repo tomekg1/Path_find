@@ -5,13 +5,12 @@
 #ifndef DFS_VIS_CPP_PLANCHE_HPP
 #define DFS_VIS_CPP_PLANCHE_HPP
 
-#endif //DFS_VIS_CPP_PLANCHE_HPP
 
 struct Point{
     uint32_t x;
     uint32_t y;
 
-    bool operator<(const Point& other) const { // potrzebna obsługa operatora < do wykonania: adj_list_.emplace(p, neighbours);
+    bool operator<(const Point& other) const { // przeciążenie operatora < do wykonania: adj_list_.emplace(p, neighbours);
         if (x < other.x) {
             return true;
         } else if (x == other.x) {
@@ -20,7 +19,7 @@ struct Point{
         return false;
     }
 
-    bool operator==(const Point& other) const{ // potrzebne do std::reverse
+    bool operator==(const Point& other) const{ // przeciążenie operatora potrzebne do std::reverse
         if ((x == other.x) && (y == other.y)){
             return true;
         }
@@ -37,7 +36,7 @@ public:
         create_adj_list();
     }
 
-    void print_points();
+    void print_points() const;
     std::vector<Point> dfs_iter();
 
 private:
@@ -47,6 +46,8 @@ private:
 
     void create_points();
     void create_adj_list();
-    void show_planche();
+    void show_planche() const;
     void update_planche(Point v);
 };
+
+#endif //DFS_VIS_CPP_PLANCHE_HPP

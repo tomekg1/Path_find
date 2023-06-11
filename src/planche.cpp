@@ -46,7 +46,7 @@ void Planche::create_adj_list() {
     }
 }
 
-void Planche::show_planche() {
+void Planche::show_planche() const{
     for (const auto& row : planche_) {
         for (const auto& ch : row) {
             std::cout << ch << ' ';
@@ -94,7 +94,7 @@ std::vector<Point> Planche::dfs_iter() {
 
 
 
-void Planche::print_points() {
+void Planche::print_points() const{
     for (const auto& pair : adj_list_) {
         const Point& key = pair.first;
         const std::vector<Point>& value = pair.second;
